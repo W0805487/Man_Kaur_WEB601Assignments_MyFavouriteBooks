@@ -5,5 +5,5 @@ export interface Content {
     author: string;
     imgURL?: string;
     type?: string;
-    tags?: string[];
+    
   }
