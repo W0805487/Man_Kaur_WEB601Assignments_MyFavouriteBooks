@@ -1,4 +1,4 @@
-export interface Content {
+ interface Content {
     id: number;
     name: string;
     description: string;
@@ -7,3 +7,4 @@ export interface Content {
     type?: string;
     
   }
+  export { Content };
