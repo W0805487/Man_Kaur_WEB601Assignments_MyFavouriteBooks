@@ -1,5 +1,7 @@
-<div class="contents">
-  
+
+  <div *ngIf = "content.type === 'Historical'  || content.type === 'Religious' || content.type === ''">
+    <div class="contents">
+
   <h2>{{content.name}}</h2>
   <p>{{content.description}}</p>
   <p>Creator: {{content.author}}</p>
@@ -7,4 +9,5 @@
   <p *ngIf="content.type" > {{content.type}}</p>
   
 
+</div>
 </div>

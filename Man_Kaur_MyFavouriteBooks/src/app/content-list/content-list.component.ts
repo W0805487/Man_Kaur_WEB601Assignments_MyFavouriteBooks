@@ -14,7 +14,7 @@ export class ContentListComponent implements OnInit {
           description: 'This is a autobiography of Dr.A.P.J. Abdul Kalam who from very humble beginnings rose to be the president of India.The book is full of insights,personal moments and life experience of Dr.Kalam',
           author: 'Arun Tiwari',
           imgURL: 'assets/img/img1.jpg',
-          type: 'Autobiography',
+          type: 'Religious'
           
     },
 
@@ -25,7 +25,7 @@ export class ContentListComponent implements OnInit {
       description: 'This book has helped men and women around the world to achieve fulfillment in their lives through Dr. Norman powerful message of faith and insiration.',
       author: 'Dr.Norman Vincent Peale',
       imgURL: 'assets/img/img2.jpg',
-      type: 'Motivational', 
+      type: 'Historical' 
     },
 
     {
@@ -34,7 +34,7 @@ export class ContentListComponent implements OnInit {
       description: 'A vivid,unforgettable story of an unlikely sisterhood-an emotionally powerful and haunting tale of friendship that illuminates the plight of women in a traditional culture..',
       author: 'Nadia Hashimi',
       imgURL: 'assets/img/img4.jpg',
-     type: 'Novel', 
+     type: 'Religious' 
     },
   
     {
@@ -42,8 +42,8 @@ export class ContentListComponent implements OnInit {
       name: 'World War',
       description: 'A vivid,unforgettable story of an unlikely sisterhood-an emotionally powerful and history of world war...',
       author: 'Mr.peterson',
-      imgURL: 'assets/img/img10.jpg',
-     type: 'Historical book', 
+      imgURL: 'assets/img/baby.jpg',
+     type: 'Historical' 
     },
 
     {
@@ -52,7 +52,7 @@ export class ContentListComponent implements OnInit {
       description: 'A vivid,unforgettable story of an unlikely sisterhood-an emotionally powerful and history of world war...',
       author: 'Mr.peterson',
       imgURL: 'assets/img/img11.jpg',
-     type: 'Historical book', 
+     type: 'Historical' 
     },
 
     {
@@ -61,8 +61,19 @@ export class ContentListComponent implements OnInit {
       description: 'This is a religious book. It is related to sikh community. This book provide the history and culture of sikhism. It is very knowledgable book.',
       author: 'Bhai veer Singh',
       imgURL: 'assets/img/img7.jpg',
-     type: 'Religious book'
+     type: 'Religious'
     },
+
+    {
+      id: 7,
+      name: 'Ameer',
+      description: ' It is related to sikh community. This book provide the history and culture of sikhism. It is very knowledgable book.',
+      author: 'Harman singh',
+      imgURL: 'assets/img/img7.jpg',
+     type: ''
+    },
+
+
   ]
   getContentHtml(index: number): string {
     const content = this.contentList[index];
@@ -77,6 +88,22 @@ export class ContentListComponent implements OnInit {
       </div>
     `;
   }
+
+  name : string='';
+  searchResult : boolean = false;
+  message : string = '';
+
+  findName(){
+    this.searchResult = this.contentList.some(content => content.name.toLowerCase() === this.name.toLowerCase())
+
+    if (this.searchResult){
+      this.message= "name Exist";
+    }
+    else{
+      this.message =" name does not exist";
+    }
+}
+
 }
 
 
