@@ -5,6 +5,7 @@
     author: string;
     imgURL?: string;
     type?: string;
+    tags?:string[];
     
   }
   export { Content };

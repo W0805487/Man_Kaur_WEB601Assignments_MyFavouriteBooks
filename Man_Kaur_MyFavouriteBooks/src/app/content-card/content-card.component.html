@@ -6,7 +6,13 @@
   <p>{{content.description}}</p>
   <p>Creator: {{content.author}}</p>
   <img  *ngIf="content.imgURL" (click)="clickEvent()" src='{{content.imgURL}}'>
-  <p *ngIf="content.type" > {{content.type}}</p>
+  
+
+  <ng-template #defaultImage>
+    <img src="assets/img/defaultImg.jpg">
+  </ng-template>
+<p *ngIf="content.type"  appHoverAffect [affectStyle]="'underline'" > {{content.type}}</p>
+<p *ngIf="content.tags && content.tags.length > 0" appHoverAffect [affectStyle]="'bold'"> {{content.tags}}</p>
   
 
 </div>
