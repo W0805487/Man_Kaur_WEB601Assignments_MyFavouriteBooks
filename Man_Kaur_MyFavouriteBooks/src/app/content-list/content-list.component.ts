@@ -13,7 +13,7 @@ export class ContentListComponent implements OnInit {
           name: 'Wings of Fire',
           description: 'This is a autobiography of Dr.A.P.J. Abdul Kalam who from very humble beginnings rose to be the president of India.The book is full of insights,personal moments and life experience of Dr.Kalam',
           author: 'Arun Tiwari',
-          imgURL: 'assets/img/img1.jpg',
+          imgURL: '',
           tags:['motivational'],
           type: 'Religious'
           

@@ -17,15 +17,21 @@ export class HoverAffectDirective {
   @HostListener('mouseleave') onMouseLeave() {
     this.removeStyles();
   }
-  removeStyles() {
-    throw new Error('Method not implemented.');
-  }
 
   private addStyles() {
     if (this.affectStyle === 'underline') {
       this.renderer.setStyle(this.elementRef.nativeElement, 'text-decoration', 'underline');
     } else if (this.affectStyle === 'bold') {
       this.renderer.setStyle(this.elementRef.nativeElement, 'font-weight', 'bold');
+    }
+  }
+
+  private removeStyles() {
+    if (this.affectStyle === 'underline') {
+      this.renderer.removeStyle(this.elementRef.nativeElement, 'text-decoration');
+    } else if (this.affectStyle === 'bold') {
+      this.renderer.removeStyle(this.elementRef.nativeElement, 'font-weight');
+
     }
   }
 }

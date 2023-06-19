@@ -5,7 +5,7 @@
   <h2>{{content.name}}</h2>
   <p>{{content.description}}</p>
   <p>Creator: {{content.author}}</p>
-  <img  *ngIf="content.imgURL" (click)="clickEvent()" src='{{content.imgURL}}'>
+  <img  *ngIf="content.imgURL; else defaultImage" (click)="clickEvent()" src='{{content.imgURL}}'>
   
 
   <ng-template #defaultImage>
