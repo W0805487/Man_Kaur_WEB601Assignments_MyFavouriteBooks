@@ -1,16 +1,16 @@
 {
   "name": "man-kaur-my-favourite-books",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "generatecomponent": "ng generatecomponent",
-    "generatepipe": "ng generatepipe",
-    "generatedirective": "ng generatedirective",
-    "Content-card": "ng generateContent-card"
+    "generatecomponent": "ng generate component",
+    "generatepipe": "ng generate pipe",
+    "generatedirective": "ng generate directive"
+    
     
   },
   "private": true,

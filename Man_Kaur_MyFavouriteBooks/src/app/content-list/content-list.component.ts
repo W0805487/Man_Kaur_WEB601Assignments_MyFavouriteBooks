@@ -1,13 +1,22 @@
 import { Component, Input, OnInit} from '@angular/core';
 import { Content} from '../helper-files/content-interface';
+
 @Component({
   selector: 'app-content-list',
   templateUrl: './content-list.component.html',
   styleUrls: ['./content-list.component.scss']
 })
-export class ContentListComponent implements OnInit {
-  ngOnInit(){}
-  contentList:Content[] = [
+export class ContentListComponent {
+  findName: string = '';
+  filterResult: boolean = false;
+  searchResult: string = '';
+  isContentFound: boolean = false;
+  contentList: any[] = [];
+
+  constructor() {
+    this.contentList = [
+
+
     {
       id: 1,
           name: 'Wings of Fire',
@@ -79,27 +88,24 @@ export class ContentListComponent implements OnInit {
       tags:['story'],
      type: ''
     },
-
-
-  ]
-  
-  
-
-  name : string='';
-  searchResult : boolean = false;
-  message : string = '';
-
-  findName(){
-    this.searchResult = this.contentList.some(content => content.name.toLowerCase() === this.name.toLowerCase())
-
-    if (this.searchResult){
-      this.message= "name Exist";
-    }
-    else{
-      this.message =" name does not exist";
-    }
+];
 }
 
+  
+  
+
+findContent() {
+  this.filterResult = this.contentList.some(c => c.title === this.findName);
+
+  this.isContentFound = !!this.filterResult;
+  this.searchResult = this.isContentFound ? 'Content item found!' : 'Content item not found!';
+}
+receiveNewContent(newContent: any): void {
+  // Add the new content item to the content list
+  console.log("newContent", newContent);
+  this.contentList = [...this.contentList, newContent];
+  console.log('contentList', this.contentList);
+}
 }
 
 

@@ -2,7 +2,7 @@
   <div *ngIf = "content.type === 'Historical'  || content.type === 'Religious' || content.type === ''">
     <div class="contents">
 
-  <h2>{{content.name}}</h2>
+  <h2 [ngStyle]="{'background-color': 'rgb(247, 183, 54)'}">{{content.name}}</h2>
   <p>{{content.description}}</p>
   <p>Creator: {{content.author}}</p>
   <img  *ngIf="content.imgURL; else defaultImage" (click)="clickEvent()" src='{{content.imgURL}}'>
