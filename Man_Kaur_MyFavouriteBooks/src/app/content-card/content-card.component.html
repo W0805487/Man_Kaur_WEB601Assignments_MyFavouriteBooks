@@ -1,4 +1,19 @@
-<h1>My Favourite Books </h1>
-<div *ngFor="let content of contentList.contentList">
-    <div [innerHtml]="contentList.getContentHtml(content.id - 1)"></div>
-  </div>
+
+  <div *ngIf = "content.type === 'Historical'  || content.type === 'Religious' || content.type === ''">
+    <div class="contents">
+
+  <h2 [ngStyle]="{'background-color': 'rgb(247, 183, 54)'}">{{content.name}}</h2>
+  <p>{{content.description}}</p>
+  <p>Creator: {{content.author}}</p>
+  <img  *ngIf="content.imgURL; else defaultImage" (click)="clickEvent()" src='{{content.imgURL}}'>
+  
+
+  <ng-template #defaultImage>
+    <img src="assets/img/defaultImg.jpg">
+  </ng-template>
+<p *ngIf="content.type"  appHoverAffect [affectStyle]="'underline'" > {{content.type}}</p>
+<p *ngIf="content.tags && content.tags.length > 0" appHoverAffect [affectStyle]="'bold'"> {{content.tags}}</p>
+  
+
+</div>
+</div>

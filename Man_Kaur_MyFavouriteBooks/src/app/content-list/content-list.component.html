@@ -1,0 +1,20 @@
+<app-create-content (contentAdded)="receiveNewContent($event)"></app-create-content>
+
+<h1 style="background-color: rgba(228, 118, 15, 0.755);">Books</h1>
+
+<div id="filter">
+    <input="name"><button (click)="findName()">Search Name</button>
+    <h2>{{message}}</h2>
+    </div>
+    <div class="historical">
+    <app-content-card *ngFor="let item of (contentList | contentFilter :'Historical');" [content]="item"  [ngClass]="{'highlight' : item.name.toLowerCase() === name.toLowerCase() && searchResult}"> 
+    </app-content-card>
+    </div>
+    <div class="religious">
+    <app-content-card *ngFor="let item of (contentList | contentFilter :'Religious');" [content]="item"  [ngClass]="{'highlight' : item.name.toLowerCase() === name.toLowerCase() && searchResult}"> 
+    </app-content-card>
+    </div>
+    <div class="empty">
+    <app-content-card *ngFor="let item of (contentList | contentFilter :'');" [content]="item"  [ngClass]="{'highlight' : item.name === name && searchResult}"> 
+    </app-content-card>
+    </div>
